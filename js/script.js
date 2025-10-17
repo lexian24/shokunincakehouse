@@ -230,10 +230,10 @@ function setupSmoothScrolling() {
                 const targetSection = document.getElementById(targetId);
 
                 if (targetSection) {
-                    // Get navbar height for offset
+                    // Get navbar height for offset (with small padding)
                     const navbar = document.querySelector('.navbar');
                     const navbarHeight = navbar ? navbar.offsetHeight : 0;
-                    const offset = 20; // Extra padding
+                    const offset = -10; // Negative to scroll down less, closer to section
 
                     // Calculate position
                     const elementPosition = targetSection.getBoundingClientRect().top;

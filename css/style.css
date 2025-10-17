@@ -70,11 +70,6 @@ body {
     flex-wrap: nowrap;
 }
 
-/* Hide Home and About on mobile, show only on desktop */
-.nav-item-desktop {
-    display: none;
-}
-
 .nav-menu a {
     text-decoration: none;
     color: #666;
@@ -362,16 +357,6 @@ section {
 
 /* Tablet - 2 columns */
 @media (min-width: 600px) {
-    /* Show all navigation items on tablet and desktop */
-    .nav-item-desktop {
-        display: list-item;
-    }
-
-    .nav-menu {
-        width: auto;
-        margin-top: 0;
-    }
-
     .nav-brand h1 {
         font-size: 1.4rem;
     }

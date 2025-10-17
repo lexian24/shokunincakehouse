@@ -14,14 +14,41 @@
             <div class="nav-brand">
                 <h1>🍰 Shokunin Cake House</h1>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#gallery">Our Cakes</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Our Cakes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="cart-button" onclick="toggleCart()">
+                    🛒 Cart (<span id="cart-count">0</span>)
+                </button>
+            </div>
         </div>
     </nav>
+
+    <!-- Shopping Cart Panel -->
+    <div id="cart-panel" class="cart-panel">
+        <div class="cart-header">
+            <h2>🛒 Your Order</h2>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div id="cart-footer" class="cart-footer" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">RM 0.00</span>
+            </div>
+            <button class="btn btn-whatsapp btn-large" onclick="checkoutWhatsApp()">
+                📱 Checkout via WhatsApp
+            </button>
+            <button class="btn-clear" onclick="clearCart()">Clear Cart</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -52,85 +79,121 @@
 
             <div class="cake-grid">
                 <!-- Cake Card 1 -->
-                <div class="cake-card">
+                <div class="cake-card" data-cake-id="1">
                     <div class="cake-image">
                         <img src="images/cakes/cake1.jpg" alt="Adorable Tiger Birthday Cake">
                     </div>
                     <div class="cake-info">
                         <h3 class="cake-name">Adorable Tiger Birthday Cake</h3>
                         <p class="cake-description">Custom 3D tiger character cake with party hat and bow tie, perfect for kids' birthdays</p>
-                        <button class="btn btn-whatsapp" onclick="orderViaWhatsApp('Adorable Tiger Birthday Cake')">
-                            Order via WhatsApp
+                        <div class="cake-price">RM 210.00</div>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="decreaseQty(1)">-</button>
+                            <input type="number" id="qty-1" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" onclick="increaseQty(1)">+</button>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart(1, 'Adorable Tiger Birthday Cake', 210.00)">
+                            Add to Cart
                         </button>
                     </div>
                 </div>
 
                 <!-- Cake Card 2 -->
-                <div class="cake-card">
+                <div class="cake-card" data-cake-id="2">
                     <div class="cake-image">
                         <img src="images/cakes/cake2.jpg" alt="Custom Character Cake">
                     </div>
                     <div class="cake-info">
                         <h3 class="cake-name">Custom Character Cake</h3>
                         <p class="cake-description">Handcrafted 3D fondant character cake, fully customizable for any theme</p>
-                        <button class="btn btn-whatsapp" onclick="orderViaWhatsApp('Custom Character Cake')">
-                            Order via WhatsApp
+                        <div class="cake-price">RM 180.00</div>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="decreaseQty(2)">-</button>
+                            <input type="number" id="qty-2" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" onclick="increaseQty(2)">+</button>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart(2, 'Custom Character Cake', 180.00)">
+                            Add to Cart
                         </button>
                     </div>
                 </div>
 
                 <!-- Cake Card 3 -->
-                <div class="cake-card">
+                <div class="cake-card" data-cake-id="3">
                     <div class="cake-image">
                         <img src="images/cakes/cake3.jpg" alt="Kids Birthday Special">
                     </div>
                     <div class="cake-info">
                         <h3 class="cake-name">Kids Birthday Special</h3>
                         <p class="cake-description">Cute animal-themed cakes with personalized name and age decorations</p>
-                        <button class="btn btn-whatsapp" onclick="orderViaWhatsApp('Kids Birthday Special')">
-                            Order via WhatsApp
+                        <div class="cake-price">RM 170.00</div>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="decreaseQty(3)">-</button>
+                            <input type="number" id="qty-3" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" onclick="increaseQty(3)">+</button>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart(3, 'Kids Birthday Special', 170.00)">
+                            Add to Cart
                         </button>
                     </div>
                 </div>
 
                 <!-- Cake Card 4 -->
-                <div class="cake-card">
+                <div class="cake-card" data-cake-id="4">
                     <div class="cake-image">
                         <img src="images/cakes/cake4.jpg" alt="3D Sculpted Cake">
                     </div>
                     <div class="cake-info">
                         <h3 class="cake-name">3D Sculpted Cake</h3>
                         <p class="cake-description">Artistic 3D fondant cake sculpted to match your favorite character or theme</p>
-                        <button class="btn btn-whatsapp" onclick="orderViaWhatsApp('3D Sculpted Cake')">
-                            Order via WhatsApp
+                        <div class="cake-price">RM 250.00</div>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="decreaseQty(4)">-</button>
+                            <input type="number" id="qty-4" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" onclick="increaseQty(4)">+</button>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart(4, '3D Sculpted Cake', 250.00)">
+                            Add to Cart
                         </button>
                     </div>
                 </div>
 
                 <!-- Cake Card 5 -->
-                <div class="cake-card">
+                <div class="cake-card" data-cake-id="5">
                     <div class="cake-image">
                         <img src="images/cakes/cake5.jpg" alt="Party Theme Cake">
                     </div>
                     <div class="cake-info">
                         <h3 class="cake-name">Party Theme Cake</h3>
                         <p class="cake-description">Colorful themed cakes perfect for celebrations with custom decorations</p>
-                        <button class="btn btn-whatsapp" onclick="orderViaWhatsApp('Party Theme Cake')">
-                            Order via WhatsApp
+                        <div class="cake-price">RM 160.00</div>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="decreaseQty(5)">-</button>
+                            <input type="number" id="qty-5" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" onclick="increaseQty(5)">+</button>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart(5, 'Party Theme Cake', 160.00)">
+                            Add to Cart
                         </button>
                     </div>
                 </div>
 
                 <!-- Cake Card 6 -->
-                <div class="cake-card">
+                <div class="cake-card" data-cake-id="6">
                     <div class="cake-image">
                         <img src="images/cakes/cake6.jpg" alt="Personalized Celebration Cake">
                     </div>
                     <div class="cake-info">
                         <h3 class="cake-name">Personalized Celebration Cake</h3>
                         <p class="cake-description">Custom designed cakes with your choice of colors, theme, and message</p>
-                        <button class="btn btn-whatsapp" onclick="orderViaWhatsApp('Personalized Celebration Cake')">
-                            Order via WhatsApp
+                        <div class="cake-price">RM 190.00</div>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="decreaseQty(6)">-</button>
+                            <input type="number" id="qty-6" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" onclick="increaseQty(6)">+</button>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart(6, 'Personalized Celebration Cake', 190.00)">
+                            Add to Cart
                         </button>
                     </div>
                 </div>

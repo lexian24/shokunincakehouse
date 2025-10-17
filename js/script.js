@@ -5,8 +5,9 @@
 
 // WhatsApp Configuration
 // IMPORTANT: Replace this with your actual WhatsApp number (include country code, no + or spaces)
-// Example: For +1 234 567 8900, use: 12345678900
-const WHATSAPP_NUMBER = '1234567890';
+// Example: For +60 12-345 6789 (Malaysia), use: 60123456789
+// Demo number - REPLACE WITH YOUR REAL NUMBER!
+const WHATSAPP_NUMBER = '60123456789';
 
 /**
  * Opens WhatsApp with a pre-filled message for cake order

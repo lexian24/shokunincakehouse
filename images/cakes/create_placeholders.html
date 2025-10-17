@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Create Placeholders</title></head>
+<body>
+<canvas id="c1" width="800" height="800"></canvas>
+<canvas id="c2" width="800" height="800"></canvas>
+<canvas id="c3" width="800" height="800"></canvas>
+<canvas id="c4" width="800" height="800"></canvas>
+<canvas id="c5" width="800" height="800"></canvas>
+<canvas id="c6" width="800" height="800"></canvas>
+<script>
+const colors = ['#FFB6C1', '#FFD700', '#98D8C8', '#F7CAC9', '#CBAACB', '#FFE5B4'];
+const names = ['Cake 1', 'Cake 2', 'Cake 3', 'Cake 4', 'Cake 5', 'Cake 6'];
+for(let i=1; i<=6; i++) {
+  const c = document.getElementById('c'+i);
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = colors[i-1];
+  ctx.fillRect(0,0,800,800);
+  ctx.fillStyle = '#fff';
+  ctx.font = 'bold 60px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText(names[i-1], 400, 420);
+}
+</script>
+</body>
+</html>

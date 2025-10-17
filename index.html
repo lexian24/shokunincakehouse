@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shokunin Cake House - Handcrafted custom cakes for every occasion">
+    <title>Shokunin Cake House - Custom Cakes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🍰 Shokunin Cake House</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Our Cakes</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Shokunin Cake House</h1>
+            <p class="hero-subtitle">Handcrafted Custom Cakes Made with Love</p>
+            <a href="#gallery" class="btn btn-primary">View Our Creations</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <p class="about-text">
+                At Shokunin Cake House, we create beautiful, delicious custom cakes for every special occasion.
+                Each cake is handcrafted with premium ingredients and designed to make your celebration unforgettable.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Cake Gallery</h2>
+            <p class="section-subtitle">Browse our collection and order via WhatsApp</p>
+
+            <div class="cake-grid">
+                <!-- Cake Card 1 -->
+                <div class="cake-card">
+                    <div class="cake-image">
+                        <img src="images/cakes/cake1.jpg" alt="Chocolate Layer Cake">
+                    </div>
+                    <div class="cake-info">
+                        <h3 class="cake-name">Chocolate Layer Cake</h3>
+                        <p class="cake-description">Rich chocolate layers with smooth ganache frosting</p>
+                        <button class="btn btn-whatsapp" onclick="orderViaWhatsApp('Chocolate Layer Cake')">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cake Card 2 -->
+                <div class="cake-card">
+                    <div class="cake-image">
+                        <img src="images/cakes/cake2.jpg" alt="Vanilla Birthday Cake">
+                    </div>
+                    <div class="cake-info">
+                        <h3 class="cake-name">Vanilla Birthday Cake</h3>
+                        <p class="cake-description">Classic vanilla sponge with buttercream decoration</p>
+                        <button class="btn btn-whatsapp" onclick="orderViaWhatsApp('Vanilla Birthday Cake')">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cake Card 3 -->
+                <div class="cake-card">
+                    <div class="cake-image">
+                        <img src="images/cakes/cake3.jpg" alt="Red Velvet Cake">
+                    </div>
+                    <div class="cake-info">
+                        <h3 class="cake-name">Red Velvet Cake</h3>
+                        <p class="cake-description">Smooth red velvet with cream cheese frosting</p>
+                        <button class="btn btn-whatsapp" onclick="orderViaWhatsApp('Red Velvet Cake')">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cake Card 4 -->
+                <div class="cake-card">
+                    <div class="cake-image">
+                        <img src="images/cakes/cake4.jpg" alt="Strawberry Shortcake">
+                    </div>
+                    <div class="cake-info">
+                        <h3 class="cake-name">Strawberry Shortcake</h3>
+                        <p class="cake-description">Fresh strawberries with light whipped cream</p>
+                        <button class="btn btn-whatsapp" onclick="orderViaWhatsApp('Strawberry Shortcake')">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cake Card 5 -->
+                <div class="cake-card">
+                    <div class="cake-image">
+                        <img src="images/cakes/cake5.jpg" alt="Lemon Drizzle Cake">
+                    </div>
+                    <div class="cake-info">
+                        <h3 class="cake-name">Lemon Drizzle Cake</h3>
+                        <p class="cake-description">Tangy lemon cake with sweet glaze</p>
+                        <button class="btn btn-whatsapp" onclick="orderViaWhatsApp('Lemon Drizzle Cake')">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cake Card 6 -->
+                <div class="cake-card">
+                    <div class="cake-image">
+                        <img src="images/cakes/cake6.jpg" alt="Carrot Cake">
+                    </div>
+                    <div class="cake-info">
+                        <h3 class="cake-name">Carrot Cake</h3>
+                        <p class="cake-description">Moist carrot cake with cream cheese frosting</p>
+                        <button class="btn btn-whatsapp" onclick="orderViaWhatsApp('Carrot Cake')">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="contact-text">
+                Ready to order your custom cake? Get in touch with us via WhatsApp!
+            </p>
+            <a href="https://wa.me/1234567890?text=Hi%20Shokunin%20Cake%20House!%20I'm%20interested%20in%20ordering%20a%20custom%20cake."
+               class="btn btn-primary btn-large" target="_blank">
+                Chat on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Shokunin Cake House. All rights reserved.</p>
+            <p>Made with love for cake lovers everywhere</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
